@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("General Setup Settings")]
     [SerializeField] float controlSpeed = 10f;
     [SerializeField] float xRange = 10f;
     [SerializeField] float yRange = 7f;
+
+    [Header("Laser gun array")]
+    [Tooltip("Add all player lasers here")]
     [SerializeField] GameObject[] lasers;
 
+    [Header("Screan position based tuning")]
     [SerializeField] float PositionPitchFactor = -2f;
-    [SerializeField] float ControlPitchFactor = -10f;
     [SerializeField] float PositionYawFactor = 2f;
-    [SerializeField] float PositionRollFactor = -20f;
+
+    [Header("Player input based tuning")]
+    [SerializeField] float ControlPitchFactor = -10f;
+    [SerializeField] float ControlRollFactor = -20f;
 
     ParticleSystem.EmissionModule emissionModule;
 
@@ -49,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
         float pitch = pitchPosition + pitchControl; //rotation.x
         float yaw = transform.localPosition.x * PositionYawFactor; //rotation.y
-        float roll = xAxis * PositionRollFactor; //rotation.z
+        float roll = xAxis * ControlRollFactor; //rotation.z
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
@@ -74,5 +81,4 @@ public class PlayerController : MonoBehaviour
             emissionModule.enabled = isActive;
         }
     }
-
 }
