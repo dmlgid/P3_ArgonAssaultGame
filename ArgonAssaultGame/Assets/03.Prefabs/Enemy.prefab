@@ -62,11 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75aff7f12dd3471498afc6b1cce38453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion_VFX: {fileID: 3200836327345539238, guid: 660caf55a1b743a49b7ddb39c702a6c6, type: 3}
+  explosion_FX: {fileID: 3200836327345539238, guid: 660caf55a1b743a49b7ddb39c702a6c6, type: 3}
   hit_VFX: {fileID: 3200836327345539238, guid: af760cebd317d6042aeb197ef9a79310, type: 3}
-  parent: {fileID: 0}
   scorePerHit: 15
-  lifeCount: 3
+  lifeCount: 1
 --- !u!1001 &592634640403230634
 PrefabInstance:
   m_ObjectHideFlags: 0

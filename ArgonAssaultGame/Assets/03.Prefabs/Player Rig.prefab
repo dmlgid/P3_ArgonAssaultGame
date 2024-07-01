@@ -66,7 +66,6 @@ GameObject:
   - component: {fileID: 4056489336203057059}
   - component: {fileID: 161832249234618221}
   - component: {fileID: 2641091852171093555}
-  - component: {fileID: 1626337927436508058}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -148,27 +147,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360651627374091926}
   m_Enabled: 1
---- !u!320 &1626337927436508058
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4360651627374091926}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: aa53b53cc4c96104e9de959b758aa5b1, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 5558278166145390793, guid: aa53b53cc4c96104e9de959b758aa5b1, type: 2}
-    value: {fileID: 4957135366407959641}
-  - key: {fileID: 213435047554691335, guid: aa53b53cc4c96104e9de959b758aa5b1, type: 2}
-    value: {fileID: 0}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1001 &6496183125005845552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,7 +157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2082928414585512071, guid: 804593a211097804ca5334f4db3d6345, type: 3}
       propertyPath: delayTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2379310913763751750, guid: 804593a211097804ca5334f4db3d6345, type: 3}
       propertyPath: m_Name

@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] GameObject explosion_VFX;
+    [SerializeField] GameObject explosion_FX;
     [SerializeField] GameObject hit_VFX;
-    [SerializeField] Transform parent;
     [SerializeField] int scorePerHit = 15;
     [SerializeField] int lifeCount = 3;
 
     ScoreBoard scoreBoard;
     Rigidbody rb;
+    GameObject gameObjectParent;
 
     private void Start()
     {
         //Find는 성능이 안좋지만, 적을 하나씩 생성할때마다 하나의 객체 타입을 찾는건 비용이 가볍다.
         scoreBoard = FindObjectOfType<ScoreBoard>();
+        gameObjectParent = GameObject.FindWithTag("SpawnAtRuntime"); //tag를 이용한 참조 가져오기
         AddRigidbody();
     }
 
@@ -41,15 +42,15 @@ public class EnemyController : MonoBehaviour
     private void ProcessHit()
     {
         GameObject explo = Instantiate(hit_VFX, transform.position, Quaternion.identity);
-        explo.transform.parent = parent;
-        scoreBoard.IncreaseScore(scorePerHit);
+        explo.transform.parent = gameObjectParent.transform;
         lifeCount--;
     }
 
     private void KillEnemy()
     {
-        GameObject explo = Instantiate(explosion_VFX, transform.position, Quaternion.identity);
-        explo.transform.parent = parent;
+        scoreBoard.IncreaseScore(scorePerHit);
+        GameObject explo = Instantiate(explosion_FX, transform.position, Quaternion.identity);
+        explo.transform.parent = gameObjectParent.transform;
         Destroy(this.gameObject);
     }
 }
